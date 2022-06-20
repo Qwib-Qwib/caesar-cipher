@@ -15,6 +15,11 @@ def caesar_cipher (string, cipher_key)
 end
 
 def character_conversion (char, cipher_key)
+  if cipher_key > 26 
+    cipher_key -= 26 until cipher_key <= 26
+  elsif cipher_key < -26
+    cipher_key += 26 until cipher_key >= -26
+  end
   if (97..122).include?(char.codepoints[0]) == false then char = char
   elsif char.codepoints[0] + cipher_key > 122 then char = ((char.codepoints[0] + cipher_key) - 26).chr
   elsif char.codepoints[0] + cipher_key < 97 then char = ((char.codepoints[0] + cipher_key) + 26).chr
@@ -24,4 +29,4 @@ def character_conversion (char, cipher_key)
 end
 
 
-caesar_cipher("Bonjour les pingouins.", -42)
+caesar_cipher("Bonjour les pingouins.", 38)
