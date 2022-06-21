@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 def caesar_cipher (string, cipher_key)
   ciphered_array = string.split("").map do |char|
     if char.upcase == char  #This conditional statement is meant to keep the same case for each character. If I understand correctly, I couldn't chain the block because it would try to call my custom method on a string, but it isn't defined as a string method.
